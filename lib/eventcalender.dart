@@ -158,7 +158,7 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
               rowHeight: 50,
               firstDay: DateTime(2022),
               lastDay: DateTime(2025),
-              focusedDay: today,
+              focusedDay: _focusedDay,
               calendarFormat: _calendarFormat,
               onDaySelected: (selectedDay, focusedDay) {
                 if (!isSameDay(_selectedDate, selectedDay)) {
@@ -182,7 +182,8 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
               },
               onPageChanged: (focusedDay) {
                 // No need to call `setState()` here
-                _focusedDay = focusedDay;
+                print("on changed ------------>"+focusedDay.toString());
+                _focusedDay = _focusedDay;
               },
               eventLoader: _listOfDayEvents,
             ),
